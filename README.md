@@ -1,7 +1,7 @@
 # TEnmo Capstone
 
 ## Introduction
-Java server-side API and command line client for funds transfer management.
+Java server-side API and command-line client for funds transfer management.
 
 ---
 ## Architecture
