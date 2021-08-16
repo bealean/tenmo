@@ -25,6 +25,10 @@ Java server-side API provides funds transfer management using:
 
 - Multiple DML statements used to process transfer are executed as an ACID transaction using a stored procedure.
 
+##### Tests
+
+The tests for this project use JUnit 4.
+
 - JUnits for the JDBC implementations of the DAO interfaces:  
 
     - use SingleConnectionDataSource to test data modification methods without committing the changes, 
