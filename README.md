@@ -30,14 +30,13 @@ Java server-side API provides funds transfer management using:
 The tests for this project use JUnit 4.
 
 - JUnits for the JDBC implementations of the DAO interfaces:  
-
     - use SingleConnectionDataSource to test data modification methods without committing the changes, 
     - use the @Value annotation to read the database properties from the application.properties file of the main application, and 
     - because @Value is not supported on static fields and the @BeforeClass method needs to be static, the Data Source is configured on the first run of the @Before method with a static boolean variable keeping track of whether the Data Source has already been configured.  
 - REST Controller JUnits:  
     - Spring's MockMvc is used to send requests to the REST Controller endpoints and check for the expected responses,  
     - the @WithMockUser annotation is used to simulate sending a request as an authenticated user,
-    - separate DAO implementations using in-memory JPA Repositories are associated with a "test" profile using the @Profile annotation, while the Jdbc DAO implementations are associated with a "prod" profile,
+    - separate DAO implementations using an in-memory H2 database and JPA Repositories are associated with a "test" profile using the @Profile annotation, while the Jdbc DAO implementations are associated with a "prod" profile,
     - the @TestPropertySource annotation is used on the test class to read the in-memory database properties from the application-test.properties file, where the "test" profile is set as the active profile, while the application.properties file for the main application has the "prod" profile as the active profile and the JDBC connection properties, and
     - the REST Controller Autowires the appropriate DAO implementation, depending on the active profile.  
 

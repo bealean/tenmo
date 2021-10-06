@@ -7,7 +7,6 @@ import java.math.BigDecimal;
 @Entity
 public class Accounts {
     @Id
-    //@GeneratedValue(strategy = GenerationType.AUTO)
     private long accountid;
 
     private long userid;
